@@ -1,3 +1,4 @@
+import { HomePageComponent } from './components/home-page/home-page.component';
 import { OpeningPageComponent } from './components/opening-page/opening-page.component';
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
@@ -22,7 +23,8 @@ registerLocaleData(en);
     AppComponent,
     LoginFormComponent,
     RegistrationFormComponent,
-    OpeningPageComponent
+    OpeningPageComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
