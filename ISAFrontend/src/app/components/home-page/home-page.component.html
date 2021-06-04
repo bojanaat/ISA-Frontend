@@ -2,9 +2,51 @@
     <nz-header>
       <div class="logo"></div>
       <ul nz-menu nzTheme="dark" nzMode="horizontal">
-        <li nz-menu-item>Points</li>
-        <li nz-menu-item>Cathegory</li>
-        <li nz-menu-item>Loyalty program</li>
+        <li *ngIf="patient" nz-menu-item>Points</li>
+        <li *ngIf="patient" nz-menu-item>Cathegory</li>
+        <li *ngIf="patient" nz-menu-item>Loyalty program</li>
+
+        <li nz-submenu *ngIf="systemAdmin"  nzTitle="Change">
+          <ul>
+            <li nz-menu-item (click)="changeProfile()">Profile</li>
+            <li nz-menu-item >Password</li>
+            
+          </ul>
+        </li>
+        <li nz-submenu *ngIf="systemAdmin"  nzTitle="Lists">
+          <ul>
+            <li nz-menu-item (click)="rr()">Registration requests</li>
+            <li nz-menu-item (click)="pharmacies()">Pharmacies</li>
+            <li nz-menu-item (click)="complaints()">Complaints</li>
+            
+          </ul>
+        </li>
+        <li nz-submenu *ngIf="systemAdmin"  nzTitle="Add">
+          <ul>
+            <li nz-menu-item  (click)="newDermatologist()">Dermatologist</li>
+            <li nz-menu-item  (click)="newSupplier()">Supplier</li>
+            <li nz-menu-item  (click)="newSystemAdmin()">System admin</li>
+            <li nz-menu-item  (click)="newMedicine()">Medicine</li>
+            <li nz-menu-item  (click)="newPharmacy()">Pharmacy</li>
+            <li nz-menu-item  (click)="newLoyaltyProgram()">Loyalty program</li>
+          </ul>
+        </li>
+
+
+        <li nz-submenu *ngIf="supplier"  nzTitle="Change">
+          <ul>
+            <li nz-menu-item (click)="supplierProfile()">Profile</li>
+            <li nz-menu-item >Password</li>
+            
+          </ul>
+        </li>
+        <li nz-menu-item *ngIf="supplier" (click)="createPurchaseOrder()">Create purchase order</li>
+        <li nz-menu-item *ngIf="supplier" (click)="seeOffers()">All offers</li>
+
+
+        <li nz-menu-item >Logout</li>
+
+
       </ul>
     </nz-header>
     <nz-content>

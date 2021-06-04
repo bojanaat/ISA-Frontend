@@ -1,3 +1,15 @@
+import { NewPurchaseOrderComponent } from './components/new-items/new-purchase-order/new-purchase-order.component';
+import { SupplierProfileComponent } from './components/updates/supplier-profile/supplier-profile.component';
+import { OffersComponent } from './components/lists/offers/offers.component';
+import { SystemAdminProfileComponent } from './components/updates/system-admin-profile/system-admin-profile.component';
+import { NewSystemAdminComponent } from './components/new-items/new-system-admin/new-system-admin.component';
+import { NewSupplierComponent } from './components/new-items/new-supplier/new-supplier.component';
+import { NewMedicineComponent } from './components/new-items/new-medicine/new-medicine.component';
+import { NewLoyaltyProgramComponent } from './components/new-items/new-loyalty-program/new-loyalty-program.component';
+import { NewDermatologistComponent } from './components/new-items/new-dermatologist/new-dermatologist.component';
+import { RegistrationRequestsComponent } from './components/lists/registration-requests/registration-requests.component';
+import { PharmaciesComponent } from './components/lists/pharmacies/pharmacies.component';
+import { ComplaintsComponent } from './components/lists/complaints/complaints.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { OpeningPageComponent } from './components/opening-page/opening-page.component';
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
@@ -15,6 +27,7 @@ import en from '@angular/common/locales/en';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NewPharmacyComponent } from './components/new-items/new-pharmacy/new-pharmacy.component';
 
 registerLocaleData(en);
 
@@ -24,7 +37,22 @@ registerLocaleData(en);
     LoginFormComponent,
     RegistrationFormComponent,
     OpeningPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    ComplaintsComponent,
+    PharmaciesComponent,
+    RegistrationRequestsComponent,
+    NewDermatologistComponent,
+    NewLoyaltyProgramComponent,
+    NewMedicineComponent,
+    NewSupplierComponent,
+    NewPharmacyComponent,
+    NewSystemAdminComponent,
+    SystemAdminProfileComponent,
+    OffersComponent,
+    SupplierProfileComponent,
+    NewPurchaseOrderComponent
+
+
   ],
   imports: [
     BrowserModule,
