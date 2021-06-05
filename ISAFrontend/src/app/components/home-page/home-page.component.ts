@@ -112,7 +112,7 @@ export class HomePageComponent implements OnInit {
   }
 
   allergy(): void {
-    this.router.navigate([`home-page/new-medicine`]);
+    this.router.navigate([`home-page/new-allergy`]);
   }
 
   consultation(): void{
@@ -125,6 +125,10 @@ export class HomePageComponent implements OnInit {
 
   searchMeds(): void {
     this.router.navigate([`home-page/search-meds`]);
+  }
+
+  reservedMeds(): void {
+    this.router.navigate([`home-page/reserved-meds`]);
   }
 
 

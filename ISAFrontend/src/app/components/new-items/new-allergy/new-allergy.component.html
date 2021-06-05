@@ -1,1 +1,22 @@
-<p>new-allergy works!</p>
+<nz-table #basicTable [nzData]="meds">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Shape</th>
+        <th>Ingredients</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let medicine of meds">
+        <td>{{ medicine.name }}</td>
+        <td>{{ medicine.medicineType }}</td>
+        <td>{{ medicine.medShape }}</td>
+        <td>{{ medicine.ingredients }}</td>
+        <td>
+          <a (click)="add(medicine.id)">Add allergy</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table> 

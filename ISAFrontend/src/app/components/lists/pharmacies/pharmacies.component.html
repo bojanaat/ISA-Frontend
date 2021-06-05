@@ -1,1 +1,20 @@
-<p>pharmacies works!</p>
+<nz-table #basicTable [nzData]="pharmacies">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pharmacy of pharmacies">
+        <td>{{ pharmacy.name }}</td>
+        <td>{{ pharmacy.address }}</td>
+        <td>{{ pharmacy.description }}</td>
+        <td>
+          <a (click)="medicines(pharmacy.id)">See pharmacy's medicines</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table> 

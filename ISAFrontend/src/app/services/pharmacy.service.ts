@@ -12,4 +12,8 @@ export class PharmacyService {
   public createPharmacy(body): Observable<any> {
     return this.http.post('http://localhost:8092/pharmacies', body);
   }
+
+  public getAllPharmacies(): Observable<any> {
+    return this.http.get('http://localhost:8092/pharmacies');
+  }
 }

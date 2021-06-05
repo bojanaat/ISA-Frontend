@@ -1,3 +1,4 @@
+import { MedicineService } from './../../../services/medicine.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewAllergyComponent implements OnInit {
 
-  constructor() { }
+  public user: any;
+  public meds: any;
+
+  constructor(private medicineService: MedicineService) { }
 
   ngOnInit(): void {
+    this.setupUser();
+    this.getMedicamentPatientIsNotAllergic();
+  }
+
+  private setupUser(): void {
+    this.user = JSON.parse(localStorage.getItem('user'));
+  } 
+
+  private getMedicamentPatientIsNotAllergic(): void {
+
+    
+   
+    this.medicineService.getMedicamentPatientIsNotAllergic( this.user.userResponse.id).subscribe(data => {
+      this.meds = data;
+      console.log(this.meds);
+    }, error => {
+     
+    })
+  }
+
+   add(id): void{
+    this.medicineService.addNewAlergy( this.user.userResponse.id, id).subscribe(data => {
+      this.meds = data;
+      location.reload();
+      console.log(this.meds);
+    }, error => {
+     
+    })
   }
 
 }

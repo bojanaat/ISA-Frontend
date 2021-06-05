@@ -1,0 +1,24 @@
+<nz-table #basicTable [nzData]="meds">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Pharmacy</th>
+        <th>Quantity</th>
+        <th>Type</th>
+        <th>Shape</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let med of meds">
+        <td>{{ med.medicineResponse.name }}</td>
+        <td>{{ med.pharmacyResponse.name }}</td>
+        <td>{{ med.quantity }}</td>
+        <td>{{ med.medicineResponse.medicineType }}</td>
+        <td>{{ med.medicineResponse.medShape }}</td>
+        <td>
+          <a (click)="reserve(med.id)">Reserve medicament</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table> 

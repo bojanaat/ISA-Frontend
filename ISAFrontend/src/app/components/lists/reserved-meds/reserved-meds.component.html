@@ -1,0 +1,40 @@
+<label>ACTIVE</label>
+<nz-table #basicTable [nzData]="meds">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Pharmacy</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let med of meds">
+        <td>{{ med.pharmacyMedsResponse.medicineResponse.name }}</td>
+        <td>{{ med.pharmacyMedsResponse.pharmacyResponse.name }}</td>
+        <td>
+          <a (click)="cancel(med.id)">Cancel reservation</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table> 
+
+  <label>DROPPED</label>
+  <nz-table #basicTable [nzData]="droppedMeds">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Pharmacy</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let droppedMed of droppedMeds">
+        <td>{{ droppedMed.pharmacyMedsResponse.medicineResponse.name }}</td>
+        <td>{{ droppedMed.pharmacyMedsResponse.pharmacyResponse.name }}</td>
+        <td>
+          <a >Rate medicament</a>
+          <a >Rate pharmacy</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table> 

@@ -1,3 +1,6 @@
+import { ReservedMedsComponent } from './components/lists/reserved-meds/reserved-meds.component';
+import { MedReservationComponent } from './components/new-items/med-reservation/med-reservation.component';
+import { PharmacyMedicinesComponent } from './components/lists/pharmacy-medicines/pharmacy-medicines.component';
 import { PatientProfileComponent } from './components/updates/patient-profile/patient-profile.component';
 import { NewAllergyComponent } from './components/new-items/new-allergy/new-allergy.component';
 import { SubscribedPharmaciesComponent } from './components/lists/subscribed-pharmacies/subscribed-pharmacies.component';
@@ -58,7 +61,10 @@ registerLocaleData(en);
     SearchMedsComponent,
     SubscribedPharmaciesComponent,
     NewAllergyComponent,
-    PatientProfileComponent
+    PatientProfileComponent,
+    PharmacyMedicinesComponent,
+    MedReservationComponent,
+    ReservedMedsComponent
 
 
   ],

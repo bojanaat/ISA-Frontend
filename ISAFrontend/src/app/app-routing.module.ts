@@ -1,3 +1,6 @@
+import { ReservedMedsComponent } from './components/lists/reserved-meds/reserved-meds.component';
+import { MedReservationComponent } from './components/new-items/med-reservation/med-reservation.component';
+import { PharmacyMedicinesComponent } from './components/lists/pharmacy-medicines/pharmacy-medicines.component';
 import { NewAllergyComponent } from './components/new-items/new-allergy/new-allergy.component';
 import { SearchMedsComponent } from './components/lists/search-meds/search-meds.component';
 import { SubscribedPharmaciesComponent } from './components/lists/subscribed-pharmacies/subscribed-pharmacies.component';
@@ -37,6 +40,8 @@ const routes: Routes = [
     {path: 'registration-requests', component: RegistrationRequestsComponent},
     {path: 'search-meds', component: SearchMedsComponent},
     {path: 'subscribed-pharmacies', component: SubscribedPharmaciesComponent},
+    {path: 'pharmacy-medicines/:id', component: PharmacyMedicinesComponent},
+    {path: 'reserved-meds', component: ReservedMedsComponent},
     //updates
     {path: 'system-admin-profile', component: SystemAdminProfileComponent},
     {path: 'supplier-profile', component: SupplierProfileComponent},
@@ -50,6 +55,7 @@ const routes: Routes = [
     {path: 'new-system-admin', component: NewSystemAdminComponent},
     {path: 'new-purchase-order', component: NewPurchaseOrderComponent},
     {path: 'new-allergy', component: NewAllergyComponent},
+    {path: 'med-reservation/:id', component: MedReservationComponent}
 
   ]}
 ];
