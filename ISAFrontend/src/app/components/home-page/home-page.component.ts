@@ -8,12 +8,12 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  public patient: boolean = false;
+  public patient: boolean = true;
   public dermatologist: boolean = false;
   public pharmacist: boolean = false;
   public systemAdmin: boolean = false;
   public pharmacyAdmin: boolean = false;
-  public supplier: boolean = true;
+  public supplier: boolean = false;
   public user: any;
 
   constructor(private router:Router) { }
@@ -74,4 +74,28 @@ export class HomePageComponent implements OnInit {
   createPurchaseOrder(): void{
     this.router.navigate([`home-page/new-purchase-order`]);
   }
+
+
+  //PATIENT
+
+  patientProfile(): void {
+    this.router.navigate([`home-page/patient-profile`]);
+  }
+
+  allergy(): void {
+    this.router.navigate([`home-page/new-medicine`]);
+  }
+
+  consultation(): void{
+    this.router.navigate([`home-page/new-loyalty-program`]);
+  }
+
+  subscribedPharmacies(): void {
+    this.router.navigate([`home-page/subscribed-pharmacies`]);
+  }
+
+  searchMeds(): void {
+    this.router.navigate([`home-page/search-meds`]);
+  }
+
 }

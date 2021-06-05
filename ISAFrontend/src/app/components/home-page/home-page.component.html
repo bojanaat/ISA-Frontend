@@ -2,9 +2,27 @@
     <nz-header>
       <div class="logo"></div>
       <ul nz-menu nzTheme="dark" nzMode="horizontal">
-        <li *ngIf="patient" nz-menu-item>Points</li>
-        <li *ngIf="patient" nz-menu-item>Cathegory</li>
-        <li *ngIf="patient" nz-menu-item>Loyalty program</li>
+        <li nz-submenu *ngIf="patient"  nzTitle="Change">
+          <ul>
+            <li nz-menu-item (click)="patientProfile()">Profile</li>
+            <li nz-menu-item >Password</li>
+            
+          </ul>
+        </li>
+        <li nz-menu-item *ngIf="patient" (click)="allergy()">New allergy </li>
+        <li nz-menu-item *ngIf="patient" >Reserve consultation </li>
+        <li nz-submenu *ngIf="patient"  nzTitle="Lists">
+          <ul>
+            <li nz-menu-item (click)="pharmacies()">Pharmacies</li>
+            <li nz-menu-item >Dermatologist appointments</li>
+            <li nz-menu-item >Pharmacist appointments</li>
+            <li nz-menu-item >Reserved meds</li>
+            
+          </ul>
+        </li>
+        <li nz-menu-item *ngIf="patient" (click)="subscribedPharmacies()" >Subscribed pharmacies</li>
+        <li nz-menu-item *ngIf="patient" (click)="searchMeds()">Search medicaments </li>
+    
 
         <li nz-submenu *ngIf="systemAdmin"  nzTitle="Change">
           <ul>

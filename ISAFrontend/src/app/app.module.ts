@@ -1,3 +1,7 @@
+import { PatientProfileComponent } from './components/updates/patient-profile/patient-profile.component';
+import { NewAllergyComponent } from './components/new-items/new-allergy/new-allergy.component';
+import { SubscribedPharmaciesComponent } from './components/lists/subscribed-pharmacies/subscribed-pharmacies.component';
+import { SearchMedsComponent } from './components/lists/search-meds/search-meds.component';
 import { NewPurchaseOrderComponent } from './components/new-items/new-purchase-order/new-purchase-order.component';
 import { SupplierProfileComponent } from './components/updates/supplier-profile/supplier-profile.component';
 import { OffersComponent } from './components/lists/offers/offers.component';
@@ -50,7 +54,11 @@ registerLocaleData(en);
     SystemAdminProfileComponent,
     OffersComponent,
     SupplierProfileComponent,
-    NewPurchaseOrderComponent
+    NewPurchaseOrderComponent,
+    SearchMedsComponent,
+    SubscribedPharmaciesComponent,
+    NewAllergyComponent,
+    PatientProfileComponent
 
 
   ],
