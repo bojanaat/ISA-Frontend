@@ -1,1 +1,18 @@
-<p>registration-requests works!</p>
+<nz-table #basicTable [nzData]="pendingRequests">
+<thead>
+<tr>
+  <th>Email</th>
+  <th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let pendingRequest of pendingRequests">
+  <td>{{ pendingRequest.email }}</td>
+  <td>
+    <a (click)="accept(pendingRequest.id)">Approve</a>
+    <nz-divider nzType="vertical"></nz-divider>
+    <a (click)="deny(pendingRequest.id)">Deny</a>
+  </td>
+</tr>
+</tbody>
+</nz-table> 

@@ -1,1 +1,68 @@
-<p>new-pharmacy works!</p>
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <br>
+     <nz-form-item>
+       <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name">Name of pharmacy</nz-form-label>
+       <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid!">
+         <input nz-input formControlName="name" id="name" />
+       </nz-form-control>
+     </nz-form-item>
+     <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="about">About pharmacy</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid!">
+          <input nz-input formControlName="about" id="about" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="address">Address of pharmacy</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid!">
+          <input nz-input formControlName="address" id="address" />
+        </nz-form-control>
+    </nz-form-item>
+     <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">Admin email</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
+          <input nz-input formControlName="username" id="username" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="password" nzRequired>Password</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your password!">
+          <input nz-input type="password" id="password" formControlName="password" (ngModelChange)="updateConfirmValidator()" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="rePassword" nzRequired>Confirm Password</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" [nzErrorTip]="errorTpl">
+          <input nz-input type="password" formControlName="rePassword" id="rePassword" />
+          <ng-template #errorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">
+              Please confirm your password!
+            </ng-container>
+            <ng-container *ngIf="control.hasError('confirm')">
+              Two passwords that you enter is inconsistent!
+            </ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="firstName" nzRequired>
+          <span>First name</span>
+        </nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your first name!">
+          <input nz-input id="firstName" formControlName="firstName" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="lastName" nzRequired>
+            <span>Last name</span>
+          </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input your last name!">
+            <input nz-input id="lastName" formControlName="lastName" />
+          </nz-form-control>
+      </nz-form-item>
+      <nz-form-item nz-row class="register-area">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+          <button nz-button nzType="primary"  [disabled]="!validateForm.valid" nzGhost>Add pharmacy and pharmacy admin</button>
+        </nz-form-control>
+      </nz-form-item>
+   </form>

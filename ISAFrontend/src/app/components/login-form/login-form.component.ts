@@ -1,7 +1,7 @@
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 
@@ -15,19 +15,52 @@ export class LoginFormComponent implements OnInit {
 
   validateForm!: FormGroup;
 
-  submitForm(): void {
-    for (const i in this.validateForm.controls) {
-      this.validateForm.controls[i].markAsDirty();
-      this.validateForm.controls[i].updateValueAndValidity();
-    }
-  }
-
-  constructor(private fb: FormBuilder) {}
-
   ngOnInit(): void {
     this.validateForm = this.fb.group({
       userName: [null, [Validators.required]],
       password: [null, [Validators.required]]
       });
+      const id = this.route.snapshot.params.id;
+
+      if(id != undefined){
+        const body = {
+          patientId: id
+        }
+        this.authService.activateRegistration(body).subscribe(() => {
+          alert('Uspešno ste se registrovali!');
+          this.router.navigateByUrl(`home-page/login`);
+        },
+        error => {
+          alert("Error login");
+        });
+      }
+
+  }
+  
+
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router, private route: ActivatedRoute) {}
+
+  
+
+  submitForm(): void {
+    for (const i in this.validateForm.controls) {
+      this.validateForm.controls[i].markAsDirty();
+      this.validateForm.controls[i].updateValueAndValidity();
+    }
+    const body = {
+      email: this.validateForm.value.userName,
+      password: this.validateForm.value.password
+    }
+
+    this.authService.login(body).subscribe(data => {
+      const user = data;
+      localStorage.setItem('user', JSON.stringify(user));
+      this.router.navigate(['home-page']);
+      console.log(data);
+    
+    }, error => { 
+    })
+
+    
   }
 }

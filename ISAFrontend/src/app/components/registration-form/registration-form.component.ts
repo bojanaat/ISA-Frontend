@@ -33,7 +33,7 @@ export class RegistrationFormComponent implements OnInit {
   }
   console.log(body);
   this.authService.register(body).subscribe(data => {
-    this.router.navigateByUrl(`opening-page/login`);
+    this.router.navigateByUrl(`opening-page/login-form`);
     
   }, error => {
   })

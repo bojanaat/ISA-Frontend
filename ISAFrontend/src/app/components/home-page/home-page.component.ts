@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  public patient: boolean = true;
+  public patient: boolean = false;
   public dermatologist: boolean = false;
   public pharmacist: boolean = false;
   public systemAdmin: boolean = false;
@@ -19,7 +19,36 @@ export class HomePageComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit(): void {
+    this.setupUser();
+    this.setupUserType();
   }
+
+  private setupUser(): void {
+    this.user = JSON.parse(localStorage.getItem('user')|| '{}');
+    console.log(this.user.userResponse.userType);
+  } 
+  
+  private setupUserType(): void {
+  
+    
+    if(this.user.userResponse.userType === 'SYSTEM_ADMIN'){
+      console.log("Ja sam sistem admin");
+      this.systemAdmin = true;
+      console.log(this.systemAdmin);
+    }else if(this.user.userResponse.userType === 'PHARMACY_ADMIN'){
+      this.pharmacyAdmin = true;
+    }else if(this.user.userResponse.userType === 'PHARMACIST'){
+      this.pharmacist = true;
+    }else if(this.user.userResponse.userType === 'DERMATOLOGIST'){
+      this.dermatologist = true;
+    }else if(this.user.userResponse.userType === 'PATIENT'){
+      this.patient = true;
+    }else if(this.user.userResponse.userType === 'SUPPLIER'){
+      this.supplier = true;
+    }
+    
+  }
+
 
   //SYSTEM ADMIN
   newDermatologist(): void {
@@ -96,6 +125,12 @@ export class HomePageComponent implements OnInit {
 
   searchMeds(): void {
     this.router.navigate([`home-page/search-meds`]);
+  }
+
+
+  logout(): void {
+    localStorage.clear();
+    this.router.navigateByUrl('opening-page');
   }
 
 }

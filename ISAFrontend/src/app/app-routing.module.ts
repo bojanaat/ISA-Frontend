@@ -26,7 +26,8 @@ const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'opening-page'},
   {path: 'opening-page', component:OpeningPageComponent, children: [
     {path: 'registration-form', component: RegistrationFormComponent},
-    {path: 'login-form', component: LoginFormComponent}
+    {path: 'login-form', component: LoginFormComponent},
+    {path: 'login-form/:id', component: LoginFormComponent },
   ]},
   {path: 'home-page', component:HomePageComponent, children: [
     //lists

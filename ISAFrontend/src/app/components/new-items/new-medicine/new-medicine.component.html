@@ -1,1 +1,80 @@
-<p>new-medicine works!</p>
+<br>
+<nz-select class="pomeri" nzShowSearch nzAllowClear nzPlaceHolder="Choose medicine type" [(ngModel)]="medicineType">
+    <ng-container>
+      <nz-option nzLabel="ANTIBIOTIC" nzValue="ANTIBIOTIC" ></nz-option>
+      <nz-option nzLabel="ANESTHETIC" nzValue="ANESTHETIC"></nz-option>
+      <nz-option nzLabel="ANTIHISTAMINE" nzValue="ANTIHISTAMINE"></nz-option>
+      <nz-option nzLabel="ANTIFUNGAL" nzValue="ANTIFUNGAL"></nz-option>
+      <nz-option nzLabel="ANALGETIC" nzValue="ANALGETIC"></nz-option>
+    </ng-container>
+</nz-select>
+<br><br>
+<nz-select class="pomeri" nzShowSearch nzAllowClear nzPlaceHolder="Choose medicine shape" [(ngModel)]="medShape">
+    <ng-container>
+      <nz-option nzLabel="POWDER" nzValue="POWDER" ></nz-option>
+      <nz-option nzLabel="CAPSULE" nzValue="CAPSULE"></nz-option>
+      <nz-option nzLabel="TABLET" nzValue="TABLET"></nz-option>
+      <nz-option nzLabel="GEL" nzValue="GEL"></nz-option>
+      <nz-option nzLabel="SYRUP" nzValue="SYRUP"></nz-option>
+      <nz-option nzLabel="SOLUTION" nzValue="SOLUTION"></nz-option>
+    </ng-container>
+</nz-select>
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <br>  
+    <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name">Name</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid!">
+          <input nz-input formControlName="name" id="name" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="code" nzRequired>
+          <span>Code</span>
+        </nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input code!">
+          <input nz-input id="code" formControlName="code" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="ingredients" nzRequired>
+            <span>Ingredients</span>
+          </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input ingredients!">
+            <input nz-input id="ingredients" formControlName="ingredients" />
+          </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="replacementCode" nzRequired>
+            <span>Replacement code</span>
+          </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input replacement code!">
+            <input nz-input id="replacementCode" formControlName="replacementCode" />
+          </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="manufacturer" nzRequired>
+            <span>Manufacturer</span>
+          </nz-form-label>
+          <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input manufacturer!">
+            <input nz-input id="manufacturer" formControlName="manufacturer" />
+          </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="notes" nzRequired>
+          <span>Notes</span>
+        </nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input notes!">
+          <input nz-input id="notes" formControlName="notes" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item class="pomeri">
+        <label nz-checkbox formControlName="recipe">
+            <span>Recipe</span>
+        </label>
+    </nz-form-item>
+      <nz-form-item nz-row class="register-area">
+        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+          <button nz-button nzType="primary" [disabled]="!validateForm.valid"  nzGhost>Add medicament</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
