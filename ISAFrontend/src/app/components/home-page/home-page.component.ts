@@ -96,8 +96,8 @@ export class HomePageComponent implements OnInit {
     this.router.navigate([`home-page/supplier-profile`]);
   }
 
-  seeOffers(): void{
-    this.router.navigate([`home-page/offers`]);
+  seeOrders(): void{
+    this.router.navigate([`home-page/orders`]);
   }
 
   createPurchaseOrder(): void{

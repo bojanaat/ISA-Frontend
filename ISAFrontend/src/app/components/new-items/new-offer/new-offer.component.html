@@ -1,0 +1,20 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <br>
+     <nz-form-item>
+       <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="start">Pick date(YYYY-MM-DD)</nz-form-label>
+       <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid date!">
+         <input nz-input formControlName="pickDate" id="pickDate" />
+       </nz-form-control>
+     </nz-form-item>
+     <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="start">Total price</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid date!">
+          <input nz-input formControlName="price" id="price" />
+        </nz-form-control>
+      </nz-form-item>
+     <nz-form-item nz-row class="register-area">
+       <nz-form-control [nzSpan]="14" [nzOffset]="6">
+         <button nz-button nzType="primary" >Create offer</button>
+       </nz-form-control>
+     </nz-form-item>
+</form>

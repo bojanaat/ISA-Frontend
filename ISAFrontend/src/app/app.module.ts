@@ -1,3 +1,8 @@
+import { NewAnswerComplaintComponent } from './components/new-items/new-answer-complaint/new-answer-complaint.component';
+import { NewComplaintPharmacyComponent } from './components/new-items/new-complaint-pharmacy/new-complaint-pharmacy.component';
+import { NewComplaintPharmacistComponent } from './components/new-items/new-complaint-pharmacist/new-complaint-pharmacist.component';
+import { NewOfferComponent } from './components/new-items/new-offer/new-offer.component';
+import { OrdersComponent } from './components/lists/orders/orders.component';
 import { PharmacyProfileComponent } from './components/pharmacy-profile/pharmacy-profile.component';
 import { ReservedMedsComponent } from './components/lists/reserved-meds/reserved-meds.component';
 import { MedReservationComponent } from './components/new-items/med-reservation/med-reservation.component';
@@ -36,6 +41,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewPharmacyComponent } from './components/new-items/new-pharmacy/new-pharmacy.component';
+import { NewComplaintDermatologistComponent } from './components/new-items/new-complaint-dermatologist/new-complaint-dermatologist.component';
 
 registerLocaleData(en);
 
@@ -66,7 +72,13 @@ registerLocaleData(en);
     PharmacyMedicinesComponent,
     MedReservationComponent,
     ReservedMedsComponent,
-    PharmacyProfileComponent
+    PharmacyProfileComponent,
+    OrdersComponent,
+    NewOfferComponent,
+    NewComplaintPharmacistComponent,
+    NewComplaintPharmacyComponent,
+    NewComplaintDermatologistComponent,
+    NewAnswerComplaintComponent
 
 
   ],

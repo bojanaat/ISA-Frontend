@@ -21,7 +21,6 @@
           </ul>
         </li>
         <li nz-menu-item *ngIf="patient" (click)="subscribedPharmacies()" >Subscribed pharmacies</li>
-        <li nz-menu-item *ngIf="patient" (click)="searchMeds()">Search medicaments </li>
     
 
         <li nz-submenu *ngIf="systemAdmin"  nzTitle="Change">
@@ -58,8 +57,7 @@
             
           </ul>
         </li>
-        <li nz-menu-item *ngIf="supplier" (click)="createPurchaseOrder()">Create purchase order</li>
-        <li nz-menu-item *ngIf="supplier" (click)="seeOffers()">All offers</li>
+        <li nz-menu-item *ngIf="supplier" (click)="seeOrders()">All orders</li>
 
 
         <li nz-menu-item (click)="logout()">Logout</li>

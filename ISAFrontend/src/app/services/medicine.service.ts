@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -15,6 +15,10 @@ export class MedicineService {
 
   public getAllMedicines(): Observable<any> {
     return this.http.get('http://localhost:8092/meds');
+  }
+
+  public getAllMedsByOrderId(id): Observable<any> {
+    return this.http.get(`http://localhost:8092/meds/${id}/order`);
   }
 
   public getMedicamentPatientIsNotAllergic(id): Observable<any> {
@@ -45,5 +49,17 @@ export class MedicineService {
 
   public reserveMed(id, body): Observable<any> {
     return this.http.put(`http://localhost:8092/meds/${id}/pharmacy-medicament`, body);
+  }
+
+  public getAllMedicamentsByPharmacyId(id): Observable<any> {
+    return this.http.get(`http://localhost:8092/meds/${id}/pharmacy`);
+  }
+
+  public searchPharmacyMedicaments(data) : Observable<any>{
+    let queryParams = {
+      params : new HttpParams().set('name', data["name"])
+                               .set('pharmacyId', data["pharmacyId"])
+    } 
+    return this.http.get(`http://localhost:8092/search/pharmacy-meds`, queryParams);
   }
 }

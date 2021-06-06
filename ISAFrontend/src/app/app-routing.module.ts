@@ -1,3 +1,9 @@
+import { NewAnswerComplaintComponent } from './components/new-items/new-answer-complaint/new-answer-complaint.component';
+import { NewComplaintPharmacistComponent } from './components/new-items/new-complaint-pharmacist/new-complaint-pharmacist.component';
+import { NewComplaintPharmacyComponent } from './components/new-items/new-complaint-pharmacy/new-complaint-pharmacy.component';
+import { NewComplaintDermatologistComponent } from './components/new-items/new-complaint-dermatologist/new-complaint-dermatologist.component';
+import { NewOfferComponent } from './components/new-items/new-offer/new-offer.component';
+import { OrdersComponent } from './components/lists/orders/orders.component';
 import { PharmacyProfileComponent } from './components/pharmacy-profile/pharmacy-profile.component';
 import { ReservedMedsComponent } from './components/lists/reserved-meds/reserved-meds.component';
 import { MedReservationComponent } from './components/new-items/med-reservation/med-reservation.component';
@@ -37,10 +43,11 @@ const routes: Routes = [
     {path: 'pharmacy-profile/:id', component: PharmacyProfileComponent},
     //lists
     {path: 'complaints', component: ComplaintsComponent},
+    {path: 'orders', component: OrdersComponent},
     {path: 'offers', component: OffersComponent},
     {path: 'pharmacies', component: PharmaciesComponent},
     {path: 'registration-requests', component: RegistrationRequestsComponent},
-    {path: 'search-meds', component: SearchMedsComponent},
+    {path: 'search-meds/:id', component: SearchMedsComponent},
     {path: 'subscribed-pharmacies', component: SubscribedPharmaciesComponent},
     {path: 'pharmacy-medicines/:id', component: PharmacyMedicinesComponent},
     {path: 'reserved-meds', component: ReservedMedsComponent},
@@ -57,6 +64,11 @@ const routes: Routes = [
     {path: 'new-system-admin', component: NewSystemAdminComponent},
     {path: 'new-purchase-order', component: NewPurchaseOrderComponent},
     {path: 'new-allergy', component: NewAllergyComponent},
+    {path: 'new-offer/:id', component: NewOfferComponent},
+    {path: 'new-complaint-dermatologist/:id', component: NewComplaintDermatologistComponent},
+    {path: 'new-complaint-pharmacy/:id', component: NewComplaintPharmacyComponent},
+    {path: 'new-complaint-pharmacist/:id', component: NewComplaintPharmacistComponent},
+    {path: 'new-answer-complaint', component: NewAnswerComplaintComponent},
     {path: 'med-reservation/:id', component: MedReservationComponent}
 
   ]}

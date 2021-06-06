@@ -40,6 +40,10 @@ export class PharmaciesComponent implements OnInit {
     this.router.navigate([`home-page/pharmacy-medicines/${id}`]);
   }
 
+  searchMeds(id): void {
+    this.router.navigate([`home-page/search-meds/${id}`]);
+  }
+
   subscribe(id): void {
     const body = {
       id: id

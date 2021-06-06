@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { MedicineService } from './../../../services/medicine.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -12,7 +13,7 @@ export class ReservedMedsComponent implements OnInit {
   public user: any;
   public droppedMeds: any;
 
-  constructor(private medicineService: MedicineService) { }
+  constructor(private router: Router, private medicineService: MedicineService) { }
 
   ngOnInit(): void {
     this.setupUser();
@@ -58,6 +59,10 @@ export class ReservedMedsComponent implements OnInit {
          console.log("Nisam uspeo");
      })
 
+  }
+
+  complaint(id): void {
+    this.router.navigate([`home-page/new-complaint-pharmacy/${id}`]);
   }
 
 }

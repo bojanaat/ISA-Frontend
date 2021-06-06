@@ -33,7 +33,10 @@
         <td>{{ droppedMed.pharmacyMedsResponse.pharmacyResponse.name }}</td>
         <td>
           <a >Rate medicament</a>
+          <nz-divider nzType="vertical"></nz-divider>
           <a >Rate pharmacy</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a (click)="complaint(droppedMed.pharmacyMedsResponse.pharmacyResponse.id)"> Complaint on pharmacy</a>
         </td>
       </tr>
     </tbody>

@@ -1,1 +1,19 @@
-<p>complaints works!</p>
+<br>
+<label class="nzm"><b>Pharmacy complaints:</b></label>
+<nz-table #basicTable [nzData]="pharmacyComplaints">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Text</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pharmacyComplaint of pharmacyComplaints">
+        <td>{{ pharmacyComplaint.patientResponse.firstName }} {{ pharmacyComplaint.patientResponse.lastName }}</td>
+        <td>{{ pharmacyComplaint.text }}</td>
+        <td (click)="answer(pharmacyComplaint.id, pharmacyComplaint.patientResponse.id)"> <a>Answer</a></td>
+      </tr>
+    </tbody>
+  </nz-table> 
+ 
