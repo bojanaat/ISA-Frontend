@@ -1,3 +1,4 @@
+import { PharmacyProfileComponent } from './components/pharmacy-profile/pharmacy-profile.component';
 import { ReservedMedsComponent } from './components/lists/reserved-meds/reserved-meds.component';
 import { MedReservationComponent } from './components/new-items/med-reservation/med-reservation.component';
 import { PharmacyMedicinesComponent } from './components/lists/pharmacy-medicines/pharmacy-medicines.component';
@@ -64,7 +65,8 @@ registerLocaleData(en);
     PatientProfileComponent,
     PharmacyMedicinesComponent,
     MedReservationComponent,
-    ReservedMedsComponent
+    ReservedMedsComponent,
+    PharmacyProfileComponent
 
 
   ],

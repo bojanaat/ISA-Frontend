@@ -1,3 +1,4 @@
+import { PharmacyProfileComponent } from './components/pharmacy-profile/pharmacy-profile.component';
 import { ReservedMedsComponent } from './components/lists/reserved-meds/reserved-meds.component';
 import { MedReservationComponent } from './components/new-items/med-reservation/med-reservation.component';
 import { PharmacyMedicinesComponent } from './components/lists/pharmacy-medicines/pharmacy-medicines.component';
@@ -33,6 +34,7 @@ const routes: Routes = [
     {path: 'login-form/:id', component: LoginFormComponent },
   ]},
   {path: 'home-page', component:HomePageComponent, children: [
+    {path: 'pharmacy-profile/:id', component: PharmacyProfileComponent},
     //lists
     {path: 'complaints', component: ComplaintsComponent},
     {path: 'offers', component: OffersComponent},

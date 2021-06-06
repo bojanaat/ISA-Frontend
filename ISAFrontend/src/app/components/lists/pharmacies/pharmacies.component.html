@@ -14,6 +14,8 @@
         <td>{{ pharmacy.description }}</td>
         <td>
           <a (click)="medicines(pharmacy.id)">See pharmacy's medicines</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a (click)="subscribe(pharmacy.id)">Subscribe</a>
         </td>
       </tr>
     </tbody>
