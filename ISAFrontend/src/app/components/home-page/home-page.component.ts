@@ -100,6 +100,11 @@ export class HomePageComponent implements OnInit {
     this.router.navigate([`home-page/orders`]);
   }
 
+  seeOffers(): void{
+    this.router.navigate([`home-page/offers/${this.user.userResponse.id}`]);
+  }
+
+
   createPurchaseOrder(): void{
     this.router.navigate([`home-page/new-purchase-order`]);
   }

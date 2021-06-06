@@ -64,6 +64,7 @@ export class ExaminationDermatologistsComponent implements OnInit {
       this.examinationService.getDermExActive(this.id).subscribe(data =>{
         console.log("Uspeo");
         this.active = data;
+        console.log(data)
        }, error => {
            console.log("Nisam uspeo");
        })

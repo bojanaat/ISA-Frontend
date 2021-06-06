@@ -1,3 +1,8 @@
+import { NewConsultationComponent } from './components/new-items/new-consultation/new-consultation.component';
+import { DermatologistExaminationsComponent } from './components/lists/dermatologist-examinations/dermatologist-examinations.component';
+import { PharmacyPharmacistsComponent } from './components/lists/pharmacy-pharmacists/pharmacy-pharmacists.component';
+import { PharmacyDermatologistsComponent } from './components/lists/pharmacy-dermatologists/pharmacy-dermatologists.component';
+import { SupplierOffersComponent } from './components/lists/supplier-offers/supplier-offers.component';
 import { MedsNonauthComponent } from './components/lists/meds-nonauth/meds-nonauth.component';
 import { PharmaciesNonauthComponent } from './components/lists/pharmacies-nonauth/pharmacies-nonauth.component';
 import { PasswordSupplierComponent } from './components/updates/password-supplier/password-supplier.component';
@@ -52,15 +57,19 @@ const routes: Routes = [
     //lists
     {path: 'complaints', component: ComplaintsComponent},
     {path: 'orders', component: OrdersComponent},
-    {path: 'offers', component: OffersComponent},
+    {path: 'offers/:id', component: OffersComponent},
     {path: 'pharmacies', component: PharmaciesComponent},
     {path: 'registration-requests', component: RegistrationRequestsComponent},
     {path: 'search-meds/:id', component: SearchMedsComponent},
     {path: 'subscribed-pharmacies', component: SubscribedPharmaciesComponent},
     {path: 'pharmacy-medicines/:id', component: PharmacyMedicinesComponent},
     {path: 'reserved-meds', component: ReservedMedsComponent},
+    {path: 'supplier-offers', component: SupplierOffersComponent},
     {path: 'examination-dermatologists/:id', component: ExaminationDermatologistsComponent},
     {path: 'examination-pharmacists/:id', component: ExaminationPharmacistsComponent},
+    {path: 'pharmacy-dermatologists/:id', component: PharmacyDermatologistsComponent},
+    {path: 'pharmacy-pharmacists/:id', component: PharmacyPharmacistsComponent},
+    {path: 'dermatologist-examinations/:id', component: DermatologistExaminationsComponent},
     //updates
     {path: 'system-admin-profile', component: SystemAdminProfileComponent},
     {path: 'supplier-profile', component: SupplierProfileComponent},
@@ -81,7 +90,8 @@ const routes: Routes = [
     {path: 'new-complaint-pharmacy/:id', component: NewComplaintPharmacyComponent},
     {path: 'new-complaint-pharmacist/:id', component: NewComplaintPharmacistComponent},
     {path: 'new-answer-complaint', component: NewAnswerComplaintComponent},
-    {path: 'med-reservation/:id', component: MedReservationComponent}
+    {path: 'med-reservation/:id', component: MedReservationComponent},
+    {path: 'new-consultation/:id', component: NewConsultationComponent}
 
   ]}
 ];

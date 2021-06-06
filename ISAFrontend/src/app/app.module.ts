@@ -1,3 +1,6 @@
+import { NewConsultationComponent } from './components/new-items/new-consultation/new-consultation.component';
+import { PharmacyPharmacistsComponent } from './components/lists/pharmacy-pharmacists/pharmacy-pharmacists.component';
+import { DermatologistExaminationsComponent } from './components/lists/dermatologist-examinations/dermatologist-examinations.component';
 import { MedsNonauthComponent } from './components/lists/meds-nonauth/meds-nonauth.component';
 import { PharmaciesNonauthComponent } from './components/lists/pharmacies-nonauth/pharmacies-nonauth.component';
 import { ExaminationPharmacistsComponent } from './components/lists/examination-pharmacists/examination-pharmacists.component';
@@ -90,7 +93,10 @@ registerLocaleData(en);
     PasswordPatientComponent,
     PasswordSupplierComponent,
     PharmaciesNonauthComponent,
-    MedsNonauthComponent
+    MedsNonauthComponent,
+    DermatologistExaminationsComponent,
+    PharmacyPharmacistsComponent,
+    NewConsultationComponent
 
   ],
   imports: [

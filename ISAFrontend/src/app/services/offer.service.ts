@@ -12,4 +12,8 @@ export class OfferService {
   public createOffer(body): Observable<any> {
     return this.http.post('http://localhost:8092/offer', body);
   }
+
+  public getAllOffersBySupplierId(id): Observable<any> {
+    return this.http.get(`http://localhost:8092/offer/${id}`);
+  }
 }

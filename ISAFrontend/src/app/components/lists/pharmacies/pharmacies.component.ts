@@ -44,6 +44,14 @@ export class PharmaciesComponent implements OnInit {
     })
   }
 
+  dermatologists(id): void {
+    this.router.navigate([`home-page/dermatologist-examinations/${id}`]);
+  }
+
+   pharmacists(id): void {
+    this.router.navigate([`home-page/pharmacy-pharmacists/${id}`]);
+  }
+
   search():void {
     for (const i in this.validateForm.controls) {
       this.validateForm.controls[i].markAsDirty();

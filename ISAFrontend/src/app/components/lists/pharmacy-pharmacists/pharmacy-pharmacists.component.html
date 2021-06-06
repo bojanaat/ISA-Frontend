@@ -1,0 +1,18 @@
+<nz-table #basicTable [nzData]="pharmacists">
+    <thead>
+      <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Number</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pharmacist of pharmacists">
+        <td>{{ pharmacist.firstName }}</td>
+        <td>{{ pharmacist.lastName }}</td>
+        <td>{{ pharmacist.phoneNumber }}</td>
+        <a (click)="reserve(pharmacist.id)">Reserve consultation</a>
+      </tr>
+    </tbody>
+</nz-table> 

@@ -25,5 +25,9 @@ export class UserService {
     return this.http.get(`http://localhost:8092/suppliers/${id}/supplier`);
   }
 
+  public getPharmacist(id): Observable<any> {
+    return this.http.get(`http://localhost:8092/pharmacist/${id}/pharmacy`);
+  }
+
 }
 

@@ -1,0 +1,17 @@
+<nz-table #basicTable [nzData]="offers">
+    <thead>
+      <tr>
+        <th>Order id</th>
+        <th>Delivery date</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let offer of offers">
+        <td>{{ offer.id }}</td>
+        <td>{{ offer.deadLine[2]}}.{{offer.deadLine[1]}}.{{offer.deadLine[0]}}.</td>
+        <td>{{ offer.totalPrice }} $</td>
+      </tr>
+    </tbody>
+</nz-table> 
+ 

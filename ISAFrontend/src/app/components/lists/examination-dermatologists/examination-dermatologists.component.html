@@ -17,9 +17,9 @@
         <td>{{ appointment.dateExamination[2]}}.{{appointment.dateExamination[1]}}.{{appointment.dateExamination[0]}}.</td>
         <td>{{ appointment.startTimeExamination[0]}}:{{appointment.startTimeExamination[1]}}0</td>
         <td>{{ appointment.endTimeExamination[0]}}:{{appointment.endTimeExamination[1]}}0</td>
-        <td>{{ appointment.dermatologist.firstName}} </td>
-        <td>{{ appointment.dermatologist.lastName}}</td>
-        <td>{{ appointment.pharmacy.name}}</td>
+        <td>{{ appointment.dermatologistResponse.firstName}} </td>
+        <td>{{ appointment.dermatologistResponse.lastName}}</td>
+        <td>{{ appointment.pharmacyResponse.name}}</td>
         <td>{{ appointment.price}} $</td>
         <td>
           <a (click)="cancel(appointment.id)"><b>Cancel appointment</b></a>

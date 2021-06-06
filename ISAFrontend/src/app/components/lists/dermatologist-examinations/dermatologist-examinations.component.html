@@ -1,0 +1,25 @@
+<label class="nzm"><b>Available appointments:</b></label>
+<nz-table #basicTable [nzData]="appointments">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Date</th>
+      <th>Appointment start</th>
+      <th>Appointment end</th>
+      <th>Price</th>
+      <th >Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let appointment of appointments">
+      <td>{{ appointment.dermatologistResponse.firstName }}</td>
+      <td>{{ appointment.dermatologistResponse.lastName }}</td>
+      <td>{{appointment.dateExamination[2]}}.{{appointment.dateExamination[1]}}.{{appointment.dateExamination[0]}}.</td>
+      <td>{{appointment.startTimeExamination[0]}}:{{appointment.startTimeExamination[1]}}0</td>
+      <td>{{appointment.endTimeExamination[0]}}:{{appointment.endTimeExamination[1]}}0</td>
+      <td>{{ appointment.price }} $</td>
+      <td><a (click)="reserveDermatologistAppointment(appointment.id)"><b>Reserve</b></a></td>
+    </tr>
+  </tbody>
+</nz-table>

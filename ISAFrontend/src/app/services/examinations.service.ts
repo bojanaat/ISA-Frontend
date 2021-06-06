@@ -18,6 +18,11 @@ export class ExaminationsService {
   public getPharmExActive(id): Observable<any> {
     return this.http.get(`http://localhost:8092/examination-pharmacist/active/${id}/patient`);
   }
+
+  public getAllAvailableExaminationsByPharmacyId(id): Observable<any> {
+    return this.http.get(`http://localhost:8092/examination-dermatologist/${id}/pharmacy`);
+  }
+
   public getPharmExDropped(id): Observable<any> {
     return this.http.get(`http://localhost:8092/examination-pharmacist/dropped/${id}/patient`);
   }
@@ -28,5 +33,9 @@ export class ExaminationsService {
 
   public cancelDermReservation(body): Observable<any> {
     return this.http.put(`http://localhost:8092/examination-dermatologist/cancel`, body);
+  }
+
+  public reserveExamination(body): Observable<any> {
+    return this.http.put(`http://localhost:8092/examination-dermatologist/reserve`, body);
   }
 }
