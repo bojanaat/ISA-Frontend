@@ -52,4 +52,13 @@ export class AuthService {
   public denyRegistrationRequest(id, body): Observable<any> {
     return this.http.put(`http://localhost:8092/patients/deny/${id}/request`, body);
   }
+
+  public changePassSupplier(id, body): Observable<any> {
+    return this.http.put(`http://localhost:8092/suppliers/${id}/password/supplier`, body);
+  }
+
+  public changePassPatient(id, body): Observable<any> {
+    return this.http.put(`http://localhost:8092/patients/${id}/password/patient`, body);
+  }
+
 }

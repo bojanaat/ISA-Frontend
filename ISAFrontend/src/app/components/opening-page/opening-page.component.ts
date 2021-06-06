@@ -21,4 +21,7 @@ export class OpeningPageComponent implements OnInit {
     this.router.navigate(['opening-page/registration-form']);
   }
 
+  pharmacies(): void{
+    this.router.navigate(['opening-page/pharmacies-nonauth']);
+  }
 }

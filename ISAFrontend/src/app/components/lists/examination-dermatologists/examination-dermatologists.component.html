@@ -1,0 +1,72 @@
+<label>ACTIVE</label>
+<nz-table #basicTable [nzData]="active">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Start time</th>
+        <th>End time</th>
+        <th>Dermatologist first name</th>
+        <th>Dermatologist last name</th>
+        <th>Pharmacy</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let appointment of active; let i = index" [attr.data-index]="i">
+        <td>{{ appointment.dateExamination[2]}}.{{appointment.dateExamination[1]}}.{{appointment.dateExamination[0]}}.</td>
+        <td>{{ appointment.startTimeExamination[0]}}:{{appointment.startTimeExamination[1]}}0</td>
+        <td>{{ appointment.endTimeExamination[0]}}:{{appointment.endTimeExamination[1]}}0</td>
+        <td>{{ appointment.dermatologist.firstName}} </td>
+        <td>{{ appointment.dermatologist.lastName}}</td>
+        <td>{{ appointment.pharmacy.name}}</td>
+        <td>{{ appointment.price}} $</td>
+        <td>
+          <a (click)="cancel(appointment.id)"><b>Cancel appointment</b></a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table> 
+
+
+
+  <label>DROPPED</label>
+  <nz-table #basicTable [nzData]="dropped">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Start time</th>
+        <th>End time</th>
+        <th>Dermatologist first name</th>
+        <th>Dermatologist last name</th>
+        <th>Pharmacy</th>
+        <th>Price</th>
+        <th>Rate pharmacy</th>
+        <th>Rate dermatologist</th>
+        <th>Add complaint</th>
+  
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let appointment of dropped; let i = index" [attr.data-index]="i">
+        <td>{{ appointment.dateExamination[2]}}.{{appointment.dateExamination[1]}}.{{appointment.dateExamination[0]}}.</td>
+        <td>{{ appointment.startTimeExamination[0]}}:{{appointment.startTimeExamination[1]}}0</td>
+        <td>{{ appointment.endTimeExamination[0]}}:{{appointment.endTimeExamination[1]}}0</td>
+        <td>{{ appointment.dermatologistResponse.firstName}} </td>
+        <td>{{ appointment.dermatologistResponse.lastName}}</td>
+        <td>{{ appointment.pharmacyResponse.name}}</td>
+        <td>{{ appointment.price}} $</td>
+        <td>
+            <nz-rate [disabled]="ratingsPharmacy[i].done" [(ngModel)]="ratingsPharmacy[i].value" (click)="ratePharmacy(appointment.pharmacyResponse.id, appointment.dermatologistResponse.id, appointment.id )" [nzTooltips]="tooltips"></nz-rate>
+          </td>
+          <td>
+            <nz-rate [disabled]="ratingsDermatologist[i].done" [(ngModel)]="ratingsDermatologist[i].value" (click)="rateDermatologist(appointment.dermatologistResponse.id, appointment.id )" [nzTooltips]="tooltips" ></nz-rate>
+          </td>
+        <td>
+          <a (click)="complaintPharmacy(appointment.pharmacy.id)">Pharmacy</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a (click)="complaintDermatologist(appointment.dermatologist.id, appointment.pharmacy.id)">Dermatologist</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table> 

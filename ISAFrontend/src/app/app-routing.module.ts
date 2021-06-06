@@ -1,3 +1,8 @@
+import { MedsNonauthComponent } from './components/lists/meds-nonauth/meds-nonauth.component';
+import { PharmaciesNonauthComponent } from './components/lists/pharmacies-nonauth/pharmacies-nonauth.component';
+import { PasswordSupplierComponent } from './components/updates/password-supplier/password-supplier.component';
+import { ExaminationDermatologistsComponent } from './components/lists/examination-dermatologists/examination-dermatologists.component';
+import { ExaminationPharmacistsComponent } from './components/lists/examination-pharmacists/examination-pharmacists.component';
 import { NewAnswerComplaintComponent } from './components/new-items/new-answer-complaint/new-answer-complaint.component';
 import { NewComplaintPharmacistComponent } from './components/new-items/new-complaint-pharmacist/new-complaint-pharmacist.component';
 import { NewComplaintPharmacyComponent } from './components/new-items/new-complaint-pharmacy/new-complaint-pharmacy.component';
@@ -31,6 +36,7 @@ import { OpeningPageComponent } from './components/opening-page/opening-page.com
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NewPharmacyComponent } from './components/new-items/new-pharmacy/new-pharmacy.component';
+import { PasswordPatientComponent } from './components/updates/password-patient/password-patient.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'opening-page'},
@@ -38,6 +44,8 @@ const routes: Routes = [
     {path: 'registration-form', component: RegistrationFormComponent},
     {path: 'login-form', component: LoginFormComponent},
     {path: 'login-form/:id', component: LoginFormComponent },
+    {path: 'pharmacies-nonauth', component: PharmaciesNonauthComponent},
+    {path: 'meds-nonauth/:id', component: MedsNonauthComponent},
   ]},
   {path: 'home-page', component:HomePageComponent, children: [
     {path: 'pharmacy-profile/:id', component: PharmacyProfileComponent},
@@ -51,10 +59,14 @@ const routes: Routes = [
     {path: 'subscribed-pharmacies', component: SubscribedPharmaciesComponent},
     {path: 'pharmacy-medicines/:id', component: PharmacyMedicinesComponent},
     {path: 'reserved-meds', component: ReservedMedsComponent},
+    {path: 'examination-dermatologists/:id', component: ExaminationDermatologistsComponent},
+    {path: 'examination-pharmacists/:id', component: ExaminationPharmacistsComponent},
     //updates
     {path: 'system-admin-profile', component: SystemAdminProfileComponent},
     {path: 'supplier-profile', component: SupplierProfileComponent},
     {path: 'patient-profile', component: PatientProfileComponent},
+    {path: 'password-supplier/:id', component: PasswordSupplierComponent},
+    {path: 'password-patient/:id', component: PasswordPatientComponent},
     //new items
     {path: 'new-dermatologist', component: NewDermatologistComponent},
     {path: 'new-loyalty-program', component: NewLoyaltyProgramComponent},

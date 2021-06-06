@@ -5,7 +5,7 @@
         <li nz-submenu *ngIf="patient"  nzTitle="Change">
           <ul>
             <li nz-menu-item (click)="patientProfile()">Profile</li>
-            <li nz-menu-item >Password</li>
+            <li nz-menu-item (click)="changePassPatient()">Password</li>
             
           </ul>
         </li>
@@ -14,8 +14,8 @@
         <li nz-submenu *ngIf="patient"  nzTitle="Lists">
           <ul>
             <li nz-menu-item (click)="pharmacies()">Pharmacies</li>
-            <li nz-menu-item >Dermatologist appointments</li>
-            <li nz-menu-item >Pharmacist appointments</li>
+            <li nz-menu-item (click)="dermatologistApp()">Dermatologist appointments</li>
+            <li nz-menu-item (click)="pharmacistApp()">Pharmacist appointments</li>
             <li nz-menu-item (click)="reservedMeds()">Reserved meds</li>
             
           </ul>
@@ -53,7 +53,7 @@
         <li nz-submenu *ngIf="supplier"  nzTitle="Change">
           <ul>
             <li nz-menu-item (click)="supplierProfile()">Profile</li>
-            <li nz-menu-item >Password</li>
+            <li nz-menu-item (click)="changePassSupplier()">Password</li>
             
           </ul>
         </li>

@@ -1,25 +1,23 @@
-import { ActionService } from './../../../services/action.service';
 import { Router } from '@angular/router';
 import { PharmacyService } from './../../../services/pharmacy.service';
 import { Component, OnInit } from '@angular/core';
-import { Form, FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: 'app-pharmacies',
-  templateUrl: './pharmacies.component.html',
-  styleUrls: ['./pharmacies.component.css']
+  selector: 'app-pharmacies-nonauth',
+  templateUrl: './pharmacies-nonauth.component.html',
+  styleUrls: ['./pharmacies-nonauth.component.css']
 })
-export class PharmaciesComponent implements OnInit {
+export class PharmaciesNonauthComponent implements OnInit {
 
   validateForm!: FormGroup;
 
   public pharmacies: any;
   public user: any;
 
-  constructor(private fb: FormBuilder, private pharmacyService: PharmacyService, private router: Router, private actionService: ActionService) { }
+  constructor(private fb: FormBuilder, private pharmacyService: PharmacyService, private router: Router) { }
 
   ngOnInit(): void {
-    this.setupUser();
     this.getAllPharmacies();
 
     this.validateForm = this.fb.group({
@@ -27,13 +25,6 @@ export class PharmaciesComponent implements OnInit {
       address: [""]
     });
   }
-
-  
-  private setupUser(): void {
-    this.user = JSON.parse(localStorage.getItem('user')|| '{}');
-    console.log(this.user.userResponse.userType);
-  } 
-
 
   private getAllPharmacies(): void {
     this.pharmacyService.getAllPharmacies().subscribe(data => {
@@ -65,28 +56,13 @@ export class PharmaciesComponent implements OnInit {
 
   medicines(id): void {
     this.router.navigate([`home-page/pharmacy-medicines/${id}`]);
-  }
-
-  resetForm(): void {
+  }resetForm(): void {
     this.validateForm.reset();
     this.getAllPharmacies();
   }
 
   searchMeds(id): void {
-    this.router.navigate([`home-page/search-meds/${id}`]);
+    this.router.navigate([`opening-page/meds-nonauth/${id}`]);
   }
-
-  subscribe(id): void {
-    const body = {
-      id: id
-    }
-    this.actionService.subscribePatient(this.user.userResponse.id, body).subscribe(data => {
-      location.reload();
-    }, error => {
-     
-    })
-  }
-
-
 
 }

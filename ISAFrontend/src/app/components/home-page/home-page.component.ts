@@ -131,6 +131,22 @@ export class HomePageComponent implements OnInit {
     this.router.navigate([`home-page/reserved-meds`]);
   }
 
+  dermatologistApp(): void {
+    this.router.navigate([`home-page/examination-dermatologists/${this.user.userResponse.id}`]);
+  }
+
+  pharmacistApp(): void {
+    this.router.navigate([`home-page/examination-pharmacists/${this.user.userResponse.id}`]);
+  }
+
+  changePassSupplier(): void {
+    this.router.navigate([`home-page/password-supplier/${this.user.userResponse.id}`]);
+  }
+
+  changePassPatient(): void {
+    this.router.navigate([`home-page/password-patient/${this.user.userResponse.id}`]);
+  }
+
 
   logout(): void {
     localStorage.clear();

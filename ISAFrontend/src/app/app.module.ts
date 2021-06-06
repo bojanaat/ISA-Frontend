@@ -1,3 +1,7 @@
+import { MedsNonauthComponent } from './components/lists/meds-nonauth/meds-nonauth.component';
+import { PharmaciesNonauthComponent } from './components/lists/pharmacies-nonauth/pharmacies-nonauth.component';
+import { ExaminationPharmacistsComponent } from './components/lists/examination-pharmacists/examination-pharmacists.component';
+import { ExaminationDermatologistsComponent } from './components/lists/examination-dermatologists/examination-dermatologists.component';
 import { NewAnswerComplaintComponent } from './components/new-items/new-answer-complaint/new-answer-complaint.component';
 import { NewComplaintPharmacyComponent } from './components/new-items/new-complaint-pharmacy/new-complaint-pharmacy.component';
 import { NewComplaintPharmacistComponent } from './components/new-items/new-complaint-pharmacist/new-complaint-pharmacist.component';
@@ -42,6 +46,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NewPharmacyComponent } from './components/new-items/new-pharmacy/new-pharmacy.component';
 import { NewComplaintDermatologistComponent } from './components/new-items/new-complaint-dermatologist/new-complaint-dermatologist.component';
+import { PasswordPatientComponent } from './components/updates/password-patient/password-patient.component';
+import { PasswordSupplierComponent } from './components/updates/password-supplier/password-supplier.component';
 
 registerLocaleData(en);
 
@@ -78,8 +84,13 @@ registerLocaleData(en);
     NewComplaintPharmacistComponent,
     NewComplaintPharmacyComponent,
     NewComplaintDermatologistComponent,
-    NewAnswerComplaintComponent
-
+    NewAnswerComplaintComponent,
+    ExaminationDermatologistsComponent,
+    ExaminationPharmacistsComponent,
+    PasswordPatientComponent,
+    PasswordSupplierComponent,
+    PharmaciesNonauthComponent,
+    MedsNonauthComponent
 
   ],
   imports: [

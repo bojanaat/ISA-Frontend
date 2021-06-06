@@ -1,0 +1,45 @@
+<div class="content">
+    <br> 
+    <form  nz-form [formGroup]="validateForm" class="ant-advanced-search-form">
+          <nz-form-item>
+            <nz-form-label class="formica" >Name</nz-form-label>
+            <nz-form-control>
+              <input class="ime" nz-input formControlName="name" placeholder="Input name"/>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-label class="formica" >Address</nz-form-label>
+            <nz-form-control>
+              <input class="address" nz-input formControlName="address" placeholder="Input address"/>
+            </nz-form-control>
+          </nz-form-item>
+         
+        <div nz-row>
+          <div nz-col [nzSpan]="24" class="search-area">
+            <button nz-button class="dugmic1" nzType="primary"  (click)="search()" ><i nz-icon nzType="search"></i>Search</button>
+            <button nz-button class="dugmic"  (click)="resetForm()"  >Clear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <br><br>
+  <nz-table #basicTable [nzData]="pharmacies">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pharmacy of pharmacies">
+          <td>{{ pharmacy.name }}</td>
+          <td>{{ pharmacy.address }}</td>
+          <td>{{ pharmacy.description }}</td>
+          <td>
+            <a (click)="searchMeds(pharmacy.id)">Search medicaments</a>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table> 

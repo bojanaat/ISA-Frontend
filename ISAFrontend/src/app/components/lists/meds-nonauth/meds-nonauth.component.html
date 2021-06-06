@@ -1,0 +1,37 @@
+<div class="content">
+    <br> 
+    <form  nz-form [formGroup]="validateForm" class="ant-advanced-search-form">
+          <nz-form-item>
+            <nz-form-label class="formica" >Name</nz-form-label>
+            <nz-form-control>
+              <input class="ime" nz-input formControlName="name" placeholder="Input name"/>
+            </nz-form-control>
+          </nz-form-item>
+         
+        <div nz-row>
+          <div nz-col [nzSpan]="24" class="search-area">
+            <button nz-button class="dugmic1" nzType="primary"  (click)="search()" ><i nz-icon nzType="search"></i>Search</button>
+            <button nz-button class="dugmic"  (click)="resetForm()"  >Clear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <br><br>
+    <nz-table #basicTable [nzData]="pharmacyMedicaments">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pharmacyMedicament of pharmacyMedicaments">
+            <td >{{pharmacyMedicament.medicineResponse.name }}</td>
+            <td>{{ pharmacyMedicament.medicineResponse.medicineType }}</td>
+            <td>{{ pharmacyMedicament.quantity }}</td>
+          </tr>
+        </tbody>
+       
+      </nz-table> 
+      

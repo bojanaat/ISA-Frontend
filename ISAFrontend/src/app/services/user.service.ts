@@ -13,8 +13,16 @@ export class UserService {
     return this.http.put(`http://localhost:8092/patients/${id}/patient`, body);
   }
 
+  public updateSupplier(id, body): Observable<any> {
+    return this.http.put(`http://localhost:8092/suppliers/${id}/supplier`, body);
+  }
+
   public getPatient(id): Observable<any> {
     return this.http.get(`http://localhost:8092/patients/${id}/patient`);
+  }
+
+  public getSupplier(id): Observable<any> {
+    return this.http.get(`http://localhost:8092/suppliers/${id}/supplier`);
   }
 
 }
